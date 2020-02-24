@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button rollDices;
     private ImageView imageView1, imageView2;
     private int[] pics;
+    private Button nextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
             rollDices = findViewById(R.id.rollDices);
             imageView1 = findViewById(R.id.imageView1);
             imageView2 = findViewById(R.id.imageView2);
+            nextView = findViewById(R.id.btnNextView);
+
+            nextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+            nextView();
+                }
+            });
+
         rollDices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
     public void readRolls()
     {
 
+    }
+
+    private void nextView()
+    {
+    View v = findViewById(R.id.listofrolls);
+        setContentView(R.layout.listofrolls);
     }
 
 
