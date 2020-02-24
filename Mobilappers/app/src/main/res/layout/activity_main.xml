@@ -2,32 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:paddingBottom="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="80dp"
-    android:paddingLeft="90dp">
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    tools:context="com.example.mobilappers.MainActivity">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginRight="142dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginRight="20dp"
-        android:src="@drawable/dice2"/>
+            android:contentDescription="dicerol1"
+            android:src="@drawable/dice2" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/dice4"/>
+            android:contentDescription="Diceroll2"
+            android:src="@drawable/dice4" />
 
     </LinearLayout>
 
@@ -35,11 +48,29 @@
         android:id="@+id/rollDices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Roll"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="251dp"
+        android:layout_marginRight="251dp"
+        android:layout_marginBottom="101dp"
+        android:text="Roll Dices"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="200dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:layout_width="103dp"
+        android:layout_height="369dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
