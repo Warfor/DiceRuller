@@ -2,14 +2,12 @@ package com.example.mobilappers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView1, imageView2;
     private int[] pics;
     private Button nextView;
-    private ArrayList<Roll> rolls;
+    private ArrayList<String> rolls;
     int SecondActivity = 10;
 
     @Override
@@ -52,10 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
                imageView1.setImageResource(pics[value1]);
                imageView2.setImageResource(pics[value2]);
-               int[] array = new int[2];
-               array[0] = value1;
-                array[1] = value2;
-               rolls.add(new Roll(array, "14:30:10"));
+               rolls.add("" + (value1+1) + ":" + (value2+1));
 
             }
         });
@@ -72,17 +67,14 @@ public class MainActivity extends AppCompatActivity {
     private void nextView()
     {
 
-        final Object objSent = new Object();
-        final Bundle bundle = new Bundle();
-        bundle.putBinder("object_value", new ObjectWrapperForBinder(objSent));
-        startActivity(new Intent(this, SecondActivity.class).putExtras(bundle));
-        Intent a = new Intent(this, SecondActivity.class);
-        Roll t = new Roll(new int[]{1,2}, "test");
-        a.putExtra("Roll1",  "");
-        startActivity(a);
+        Intent intent = new Intent(this, SecondActivity.class);
+        System.out.println("test");
+        intent.putStringArrayListExtra("Rolls",  rolls);
+        startActivity(intent);
+
 
     //View v = findViewById(R.id.listofrolls);
-       // setContentView(R.layout.listofrolls);
+       //setContentView(R.layout.listofrolls);
     }
 
 

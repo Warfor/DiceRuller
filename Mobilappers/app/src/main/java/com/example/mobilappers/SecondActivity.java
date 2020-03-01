@@ -16,37 +16,20 @@ int SecondActivity = 10;
     ArrayList arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("test");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listofrolls);
         list = findViewById(R.id.ListView);
-        Intent intent = new Intent(this, MainActivity.class);
+        //Intent intent = new Intent(this, MainActivity.class);
 
-        startActivityForResult(intent, 10);
+        //startActivityForResult(intent, 10);
 
         Bundle data = getIntent().getExtras();
 
-        ArrayList<Roll> rolls = data.getParcelableArrayList("Rolls");
+        ArrayList<String> rolls = data.getStringArrayList("Rolls");
 
-      //  ListAdapter adapter = new ArrayAdapter<Roll>(this, android.R.layout.simple_list_item_1, rolls);
-        //list.setAdapter(adapter);
+        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rolls);
+        list.setAdapter(adapter);
     }
 
-
-    public void test()
-    {
-
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data )
-    {
-        if( requestCode == SecondActivity)
-        {
-            switch (resultCode){
-                case RESULT_OK:
-                    arrayList = data.getExtras().getParcelableArrayList("Rolls");
-                    break;
-                    default:
-            }
-        }
-    }
 }
