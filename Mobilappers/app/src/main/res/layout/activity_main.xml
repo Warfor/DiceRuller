@@ -17,11 +17,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginRight="142dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +31,60 @@
             android:id="@+id/imageView1"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginRight="20dp"
+
             android:contentDescription="dicerol1"
             android:src="@drawable/dice2" />
 
         <ImageView
             android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Diceroll2"
+            android:src="@drawable/dice4" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:contentDescription="Diceroll2"
+            android:src="@drawable/dice4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="306dp"
+        android:layout_height="102dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:contentDescription="dicerol1"
+            android:src="@drawable/dice2" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Diceroll2"
+            android:src="@drawable/dice4" />
+
+        <ImageView
+            android:id="@+id/imageView6"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="Diceroll2"
@@ -52,25 +100,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="251dp"
-        android:layout_marginRight="251dp"
-        android:layout_marginBottom="101dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Roll Dices"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         tools:ignore="UnknownId" />
-
-    <ListView
-        android:layout_width="103dp"
-        android:layout_height="369dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="45dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnNextView"
@@ -79,9 +117,20 @@
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
         android:layout_marginBottom="12dp"
-        android:text="Button"
+        android:text="History"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="221dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNextView"
+        android:entries="@array/spinner"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
